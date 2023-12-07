@@ -1,0 +1,76 @@
+Project 2(Battle Simulator)
+
+What is meant to happen.
+
+*Beginning the Project will have pick a character, displaying and image of Character and their stats. Only starting the
+battle when you select start batte, Blitzadile is selected by default.
+*Turns will be displayed as well as what the player did that turn and what the enemy did.
+Battle Screen displays Player/Enemy, Name, Current Health / Max Health, and a progress bar as the health bar.
+The health bars will change color to yellow at 49 percent to red at 29 percent. 
+*Battle option will have attack or quit, if you select attack you will see 3 moves and back. The move will play
+out the next turn with your selected move and a random move from the oponent, back take back to Attack and Quit.
+Quit takes you back to the character select screen. 
+*If enough turns play out where either the player or enemy hp are at zero, you be taken to the attack/quit screen
+so you can view the last turn, this will display the result on the right end of the screen. Either attack or quit will take 
+you back to the character select screen.
+
+Format For CharacterStats.csv
+Name	HP	ATTACK	IMAGE	Element	MOVE1	Power1	MoveE1	Uses1	MOVE2	Power2	MoveE2	Uses2	MOVE3	Power3	MoveE3	Uses3	End
+[0]     [1]     [2]     [3]     [4]     [5]     [6]     [7]     [8]     [9]     [10]    [11]    [12]    [13]    [14]    [15]    [16]    [17]
+
+Uses1,2,3 were not included in program due time contraints.
+
+
+
+
+Expected Results for Damage
+
+Refer to CharacterStats.csv to see specific values.
+
+*Move 1 will not be highlighted with a color indicating an element. It represents physical damage.
+Will never get elemental bonus or lowered damage for attacking an opponent with a favorable or disfavorable
+matchup. Physical damage is the only damage type that includes "Attack" so it is more consistent than elemental
+damage but does'nt get the same highs. The power stat is the main value used in damage calculation. Physical
+get bonus Attack damage to keep up with elemental damage.
+
+Physical Attack Damage = Attack + Power1
+-Blitzadile Bite should always do 4 damage and say "Effective." (Attack = 3) + (Power1 = 1) = 4.
+-Jormangandr Slam should always do 2 damage and say "Effective." (Attack = 1) + (Power1 = 1) = 2.
+-Totogaia Headbutt should always do 3 damage and say "Effective." (Attack = 2) + (Power = 1) = 3.
+
+
+
+*Elemental Damage can hit really hard or be dissapointing in damage depending on matchup. Damage doubles
+in a favorable matchup. (Move * 2) or Loses a point in damage (Move - 1), if match is disfavorable or the same. 
+(Move - 1) I did minus one in damage since the move would be to weak if it was halved. There are weak elemental
+moves(move2) and strong elemental moves(move3). All weak elemental moves have the same power of (Power2) = 2. The
+Strong Elemental Moves also have the same power of (Power3 = 3). If we apply the doubling and subtracting the 
+values below show that. There are not neutral elemental move so the damage will always be modified in the 
+context of this project since there are only three character, 2 situations resist and 1 weak. Damage values below:
+
+*Elemental moves will be indicated using colors to show what element they are. Green for grass. Blue for Water. Orange for fire.
+
+Weak Elemental Moves: Pour, Spark, Growth.
+Power2 = 2
+
+Pour hitting Fire(Blitzadile): (Power2 * 2) = 4 damage. "Very Effective"
+Pour hitting Water(Jormangandr) or Grass(Totogaia): (Power2 - 1) = 1 damage. "Not very effective"
+
+Spark hitting Grass(Totogaia): (Power2 * 2) = 4 damage. "Very Effective"
+Spark hitting Water(Jormangandr) or Fire(Blitzadile): (Power2 - 1) = 1 damage. "Not very effective"
+
+Growth hitting Water(Jormangandr): (Power2 * 2) = 4 damage. "Very Effective"
+Growth hitting Fire(Blitzadile) or Grass(Totogaia) = (Power2 - 1) = 1 damage. "Not very effective"
+
+
+Strong Elemental Moves: Tsunami, Scorch, Mudslide.
+Power3 = 3
+
+Tsunami hitting Fire(Blitzadile): (Power3 * 2) = 6 damage. "Very Effective"
+Tsunami hitting Water(Jormangandr) or Grass(Totogaia): (Power3 - 1) = 2 damage."Not very effective"
+
+Scorch hitting Grass(Totogaia): (Power3 * 2) = 6 damage. "Very Effective"
+Scorch hitting Water(Jormangandr) or Fire(Blitzadile): (Power3 - 1) = 2 damage. "Not very effective"
+
+Mudslide hitting Water(Jormangandr): (Power3 * 2) = 6 damage. "Very Effective"
+Mudslide hitting Fire(Blitzadile) or Grass(Totogaia) = (Power3 - 1) = 2 damage. "Not very effective"

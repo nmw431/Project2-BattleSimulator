@@ -1,0 +1,4 @@
+Name,HP,ATTACK,IMAGE,Element,MOVE1,Power1,MoveE1,Uses1,MOVE2,Power2,MoveE2,Uses2,MOVE3,Power3,MoveE3,Uses3,End
+Blitzadile,15,3,A.png,Fire,Bite,1,None,10,Spark,2,Fire,5,Scorch,3,Fire,1,End
+Jormangandr,20,1,B.png,Water,Slam,1,None,10,Pour,2,Water,5,Tsunami,3,Water,1,End
+Totogaia,17,2,C.png,Grass,Headbutt,1,None,10,Growth,2,Grass,5,Mudslide,3,Grass,1,End
